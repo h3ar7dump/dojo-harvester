@@ -1,0 +1,28 @@
+syntax = "proto3";
+package telemetry;
+
+option go_package = "github.com/dojo-harvester/backend/pkg/proto";
+
+message RobotTelemetry {
+  int64 timestamp_ns = 1;
+  string session_id = 2;
+  string robot_id = 3;
+  repeated float joint_positions = 4;
+  repeated float joint_velocities = 5;
+  repeated float joint_efforts = 6;
+  map<string, bytes> camera_frames = 7;
+  map<string, float> sensor_readings = 8;
+  float battery_level = 9;
+  repeated string error_flags = 10;
+  Pose end_effector_pose = 11;
+}
+
+message Pose {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+  float qw = 4;
+  float qx = 5;
+  float qy = 6;
+  float qz = 7;
+}
