@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  host: "0.0.0.0"
+  mode: "development"
+  allow_origins: "*"
+
+storage:
+  badger_path: "./data/badger"
+  dataset_path: "./data/datasets"
+  min_free_space_mb: 1024
+
+logger:
+  level: "debug"
+  development: true
+
+scripts:
+  record: "../toolkit/scripts/record.sh"
+  convert: "../toolkit/scripts/convert.sh"
+  upload_local: "../toolkit/scripts/upload_local.sh"
+  timeout_secs: 3600
+
+telemetry:
+  max_concurrent_connections: 50
+  max_message_size_bytes: 1048576
+
+platform:
+  url: "http://10.59.3.10:80"
+  retry_count: 5

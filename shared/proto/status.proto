@@ -1,0 +1,10 @@
+syntax = "proto3";
+package status;
+
+option go_package = "github.com/dojo-harvester/backend/pkg/proto";
+
+message StatusUpdate {
+  string session_id = 1;
+  string status = 2;
+  string message = 3;
+}
